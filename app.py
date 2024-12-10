@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, send_file
+import onnxruntime as ort
 from rembg import remove
 from PIL import Image
 from io import BytesIO
