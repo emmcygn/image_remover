@@ -2,8 +2,8 @@ from rembg import remove
 from PIL import Image
 
 
-input = Image.open('dog.png')
+input = Image.open('input.png')  
 
 output = remove(input)
 
-output.save('out.png')
+output.save('output.png') 
