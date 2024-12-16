@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 5100
+# Remove hardcoded EXPOSE as port will be dynamic
+# EXPOSE 5100
 
 CMD ["python", "app.py"]

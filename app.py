@@ -3,6 +3,7 @@ import onnxruntime as ort
 from rembg import remove
 from PIL import Image
 from io import BytesIO
+import os
 
 app = Flask(__name__)
 
@@ -20,9 +21,9 @@ def upload_file():
             img_io = BytesIO()
             output_image.save(img_io, 'PNG')
             img_io.seek(0)
-            # return send_file(img_io, mimetype='image/png')  # Change download in separatre browser tab
             return send_file(img_io, mimetype='image/png', as_attachment=True, download_name='_rmbg.png')
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, port=5100)
+    port = int(os.environ.get("PORT", 5100))
+    app.run(host='0.0.0.0', debug=False, port=port)
