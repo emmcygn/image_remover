@@ -26,4 +26,4 @@ def upload_file():
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5100))
-    app.run(host='0.0.0.0', debug=False, port=port)
+    app.run(host='0.0.0.0', debug=False, port=port)  # Set debug=False for production
